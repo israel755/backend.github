@@ -1,0 +1,27 @@
+{
+  "currentText": "Bonne soirée !",
+  "speed": 100,
+  "direction": "LEFT",
+  "messages": [
+    {
+      "timeRange": "07:00-12:00",
+      "text": "Soyez les bienvenus à IROKO Fab Lab"
+    },
+    {
+      "timeRange": "12:00-19:00",
+      "text": "Bon après-midi !"
+    },
+    {
+      "timeRange": "19:00-07:00",
+      "text": "Bonne soirée !"
+    }
+  ],
+  "shareTime": 0,
+  "durationUnlimited": false,
+  "expirationTime": null,
+  "defaultMessages": {
+    "morningMessage": "Soyez les bienvenus à IROKO Fab Lab",
+    "afternoonMessage": "E",
+    "nightMessage": "Bonne soirée !"
+  }
+}
