@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 
 // Fonction pour obtenir le message approprié selon l'heure actuelle
 function getDefaultMessageForCurrentTime(messages) {
-  const currentHour = new Date().getUTCHours() + 1; // +1 pour UTC+1
+  const currentHour = new Date().getUTCHours();
 
   if (!messages || messages.length === 0) {
     return ""; // Aucun message par défaut n'est configuré
