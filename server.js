@@ -222,10 +222,37 @@ app.post("/api/default-messages", (req, res) => {
 
 
 
+
+let etatESP32 = "Inactif"; // L'ESP32 est inactif au démarrage
+let derniereRequete = null; // Stocke l'heure de la dernière requête
+
+// Vérification périodique de l'état de l'ESP32
+setInterval(() => {
+  const maintenant = new Date();
+  if (derniereRequete && (maintenant - derniereRequete > 10000)) { // Si aucune requête depuis 10 sec
+    etatESP32 = "Inactif";
+  }
+}, 5000); // Vérifie toutes les 5 sec
+
 // API : Obtenir les paramètres actuels
 app.get("/api/settings", (req, res) => {
-  const data = loadData();
-  res.json(data);
+  try {
+    const data = loadData();
+
+    // Vérifie si la requête provient bien de l'ESP32 (ex: vérifier l'User-Agent ou une clé secrète)
+    if (req.headers["user-agent"] && req.headers["user-agent"].includes("ESP32")) {
+      etatESP32 = "Actif"; // L'ESP32 envoie une requête valide
+      derniereRequete = new Date();
+    }
+
+    // Ajout de l'état ESP32 dans la réponse
+    res.json({ ...data, etatESP32 });
+
+  } catch (error) {
+    // En cas d'erreur, l'ESP32 est considéré comme inactif
+    etatESP32 = "Inactif";
+    res.status(500).json({ error: "Erreur lors du chargement des paramètres", etatESP32 });
+  }
 });
 
 // Lancer la surveillance et le serveur
