@@ -61,9 +61,9 @@ function loadData() {
       speed: 100,
       direction: "LEFT",
       messages: [
-        { timeRange: "07:00-12:00", text: "Soyez les bienvenus à IROKO Fab Lab" },
-        { timeRange: "12:00-19:00", text: "Bon après-midi !" },
-        { timeRange: "19:00-07:00", text: "Bonne soirée !" },
+        { timeRange: "07:00-12:00", text: "SOYEZ LES BIENVENUS A IROKO FAB LAB" },
+        { timeRange: "12:00-19:00", text: "BON APRES-MIDI !" },
+        { timeRange: "19:00-07:00", text: "BONNE SOIREE !" },
       ],
       shareTime: 0,
       durationUnlimited: false,
