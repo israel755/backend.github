@@ -3,7 +3,7 @@ const fs = require("fs");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;  // Port dynamique pour déploiement
 const DATA_FILE = "./info.json";
 
 app.use(cors());
@@ -257,9 +257,10 @@ app.get("/api/settings", (req, res) => {
 
 // Lancer la surveillance et le serveur
 monitorExpiration();
-app.listen(PORT, () => {
-  console.log(`Backend en cours d'exécution sur http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Backend en cours d'exécution sur http://localhost:${port}`);
 });
+
 
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] Requête reçue : ${req.method} ${req.url}`);
