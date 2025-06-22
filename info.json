@@ -5,7 +5,7 @@
   "messages": [
     {
       "timeRange": "07:00-12:00",
-      "text": "SOYEZ LES BIENVENUS A IROKO FAB LAB"
+      "text": "SOYEZ LES BIENVENUS A LA SOUTENANCE DE JOSUE"
     },
     {
       "timeRange": "12:00-19:00",
@@ -20,7 +20,7 @@
   "durationUnlimited": false,
   "expirationTime": null,
   "defaultMessages": {
-    "morningMessage": "SOYEZ LES BIENVENUS A IROKO FAB LAB",
+    "morningMessage": "SOYEZ LES BIENVENUS A LA SOUTENANCE DE JOSUE",
     "afternoonMessage": "BON APRES-MIDI !",
     "nightMessage": "BONNE SOIREE !"
   }
